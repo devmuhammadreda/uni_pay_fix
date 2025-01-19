@@ -63,14 +63,14 @@ class UniPayControllers {
   }) async {
     uniPayStatus = response.status;
 
-    if (!isFromApplePay) {
-      // Navigate to payment result view
-      context.uniPushReplacement(const PaymentResultView());
-      await Future.delayed(const Duration(seconds: 2));
+    // if (!isFromApplePay) {
+    //   // Navigate to payment result view
+    //   context.uniPushReplacement(const PaymentResultView());
+    //   await Future.delayed(const Duration(seconds: 2));
 
-      /// Pop the payment result view and go back to the previous screen
-      // UniPayControllers.context.uniParentPop();
-    }
+    //   // Pop the payment result view and go back to the previous screen
+    //   UniPayControllers.context.uniParentPop();
+    // }
 
     //* Success
     if (response.status.isSuccess) {
