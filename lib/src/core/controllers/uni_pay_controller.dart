@@ -1,7 +1,10 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
+import 'package:uni_pay/src/utils/extension.dart';
 import 'package:uni_pay/uni_pay.dart';
+
+import '../../views/widgets/payment_result_view.dart';
 
 class UniPayControllers {
   UniPayControllers._();
@@ -60,14 +63,14 @@ class UniPayControllers {
   }) async {
     uniPayStatus = response.status;
 
-    // if (!isFromApplePay) {
-    //   // Navigate to payment result view
-    //   context.uniPushReplacement(const PaymentResultView());
-    //   await Future.delayed(const Duration(seconds: 2));
+    if (!isFromApplePay) {
+      // Navigate to payment result view
+      context.uniPushReplacement(const PaymentResultView());
+      await Future.delayed(const Duration(seconds: 2));
 
-    //   /// Pop the payment result view and go back to the previous screen
-    //   UniPayControllers.context.uniParentPop();
-    // }
+      /// Pop the payment result view and go back to the previous screen
+      // UniPayControllers.context.uniParentPop();
+    }
 
     //* Success
     if (response.status.isSuccess) {
