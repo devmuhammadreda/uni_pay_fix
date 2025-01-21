@@ -91,8 +91,9 @@ class _TamaraCheckoutViewState extends State<TamaraCheckoutView> {
           ValueListenableBuilder(
             valueListenable: UniTamara.currentStateNotifier,
             builder: (_, state, ___) => Visibility(
-                visible: state.isLoading,
-                child: UniPayDesignSystem.loadingIndicator()),
+              visible: state.isLoading,
+              child: UniPayDesignSystem.loadingIndicator(),
+            ),
           ),
         ],
       ),

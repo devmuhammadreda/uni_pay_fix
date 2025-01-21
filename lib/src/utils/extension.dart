@@ -69,10 +69,6 @@ extension StringExt on String {
     }
   }
 
-  Map<String, String> get tamaraHeaders => {
-        HttpHeaders.contentTypeHeader: 'application/json',
-        HttpHeaders.authorizationHeader: this,
-      };
 
   UniPayCardType get cardType {
     switch (this) {

@@ -77,11 +77,13 @@ class UniTamara {
 
   ///* Call tamara checkout
   static Future<TamaraCheckoutData> tamaraCheckout(
-      TamaraData tamaraData, UniPayData uniPayData) async {
+    TamaraData tamaraData,
+    UniPayData uniPayData,
+  ) async {
     TamaraCheckoutData checkout = TamaraCheckoutData();
     try {
       String data = jsonEncode(tamaraData.toJson());
-      // uniPrint(data);
+      uniPrint(data);
       http_client.Response response = await http_client.post(
         Uri.parse(ApiKeys.tamaraCheckoutUrl),
         headers: ApiKeys.tamaraHeaders,
@@ -169,7 +171,7 @@ class UniTamara {
       String bodyData = json.encode(tamaraCaptureOrder.toJson());
       http_client.Response response = await http_client.post(
         Uri.parse(tamaraCaptureOrder.environment.tamaraCapturePayment),
-        headers: tamaraCaptureOrder.tamaraToken.tamaraHeaders,
+        headers: ApiKeys.tamaraHeaders,
         body: bodyData,
       );
       final data = json.decode(response.body);
@@ -200,7 +202,7 @@ class UniTamara {
       http_client.Response response = await http_client.get(
         Uri.parse(tamaraApiData.environment
             .tamaraTransactionApi(tamaraApiData.orderId)),
-        headers: tamaraApiData.tamaraToken.tamaraHeaders,
+        headers: ApiKeys.tamaraHeaders,
       );
       final data = json.decode(response.body);
       uniLog("Saif got this data -------->$data");

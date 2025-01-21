@@ -21,9 +21,12 @@ class ApiKeys {
   static const String cancelUrl = "$uniBaseURl/cancelled";
   static String approved = "approved";
   static String get tamaraCheckoutUrl => "$tamaraBaseUrl/checkout";
-
-  static Map<String, String> get tamaraHeaders => UniPayControllers
-      .uniPayData.credentials.tamaraCredential!.token.tamaraHeaders;
+  static Map<String, String> get tamaraHeaders => {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Authorization":
+            "Bearer ${UniPayControllers.uniPayData.credentials.tamaraCredential!.token}",
+      };
 
   ///* Process payment --------------------------------
   static PaymentConfig get moyasarPaymentConfig {
