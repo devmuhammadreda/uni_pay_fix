@@ -83,7 +83,7 @@ class UniTamara {
     TamaraCheckoutData checkout = TamaraCheckoutData();
     try {
       String data = jsonEncode(tamaraData.toJson());
-      uniPrint(data);
+      uniLog(data);
       http_client.Response response = await http_client.post(
         Uri.parse(ApiKeys.tamaraCheckoutUrl),
         headers: ApiKeys.tamaraHeaders,
