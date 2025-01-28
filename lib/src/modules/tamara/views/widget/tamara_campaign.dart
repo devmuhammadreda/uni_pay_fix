@@ -32,8 +32,8 @@ class TamaraCampaign extends StatelessWidget {
         if (!isFromProductPage) _openTamaraPaymentDialog();
       },
       child: Container(
-        width: 100.w,
-        padding: EdgeInsets.all(10.rSp),
+        constraints: const BoxConstraints(minWidth: 300, maxWidth: 720),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: UniPayColorsPalletes.white,
           border: Border.all(color: UniPayColorsPalletes.black.withOpacity(.1)),
