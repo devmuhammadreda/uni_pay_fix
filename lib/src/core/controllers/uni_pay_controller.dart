@@ -1,10 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:uni_pay/src/utils/extension.dart';
 import 'package:uni_pay/uni_pay.dart';
-
-import '../../views/widgets/payment_result_view.dart';
 
 class UniPayControllers {
   UniPayControllers._();

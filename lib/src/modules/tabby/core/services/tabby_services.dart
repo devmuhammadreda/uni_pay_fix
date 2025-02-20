@@ -134,6 +134,7 @@ class UniTabbyServices {
         sessionId: sessionResult.sessionId,
         paymentId: sessionResult.paymentId,
         availableProducts: sessionResult.availableProducts,
+        status: sessionResult.status,
       );
       uniLog("✔ Tabby Session: ${session.toString()}");
       return session;
